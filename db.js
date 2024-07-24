@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express();
-
 const mongoose=require("mongoose");
-const mongoURL = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.12'
+require('dotenv').config();
+
+
+
+// const mongoURL = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.12'
+const mongoURL = process.env.MONGODB_URL;
 mongoose.connect(mongoURL);
 
 
